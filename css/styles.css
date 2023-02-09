@@ -1,4 +1,5 @@
 :root {
+  /* Кольори */
   --primary-text-color: #212121;
   --ordinary-text-color: #757575;
   --accent-color: #2196f3;
@@ -10,6 +11,10 @@
   --wrapper-color: #eeeeee;
   --hero-button-bgcolor: #188ce8;
   --icons-color: #afb1b8;
+
+  /* Анімація */
+  --animation-orinary: 250ms;
+  --cubic-ordinary: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -138,6 +143,8 @@ p {
   line-height: 1.14;
   letter-spacing: 0.02em;
   text-decoration: none;
+
+  transition: var(--animation-orinary) var(--cubic-ordinary);
 }
 
 .site-nav .link:hover,
@@ -190,6 +197,8 @@ p {
   font-size: 14px;
   line-height: 1.14px;
   letter-spacing: 0.02em;
+
+  transition: var(--animation-orinary) var(--cubic-ordinary);
 }
 
 .site-contacts .contact:hover,
@@ -335,6 +344,8 @@ p {
   padding: 10px 32px;
 
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+  transition: var(--animation-orinary) var(--cubic-ordinary);
 }
 
 .buttons .btn {
@@ -351,6 +362,8 @@ p {
   cursor: pointer;
   padding: 6px 22px;
   border-radius: 4px;
+
+  transition: var(--animation-orinary) var(--cubic-ordinary);
 }
 
 .buttons .btn:hover,
@@ -479,6 +492,8 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  transition: var(--animation-orinary) var(--cubic-ordinary);
 }
 
 /* Приклади робіт  */
@@ -491,13 +506,57 @@ p {
 
 .examples .item {
   flex-basis: calc((100% - 60px) / 3);
+  transition: var(--animation-orinary) var(--cubic-ordinary);
 }
 
 .wrapper {
+  z-index: 10;
+  position: relative;
+  background: white;
+
   padding: 20px 24px;
   border-right: 1px solid var(--wrapper-color);
   border-bottom: 1px solid var(--wrapper-color);
   border-left: 1px solid var(--wrapper-color);
+}
+
+.decoration {
+  position: relative;
+  overflow: hidden;
+  display: block;
+}
+
+.decoration:hover,
+.decoration:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+.overlay {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: rgba(33, 150, 243, 0.9);
+  padding: 63px 24px;
+
+  transform: translateY(100%);
+  transition: var(--animation-orinary) var(--cubic-ordinary);
+}
+
+.decoration:hover .overlay,
+.bdecoration:focus .overlay {
+  transform: translateY(0);
+}
+
+.overlay-text {
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+  color: #ffffff;
 }
 
 /* Наші клієнти */
@@ -519,6 +578,8 @@ p {
   border-radius: 4px;
 
   outline: transparent;
+
+  transition: var(--animation-orinary) var(--cubic-ordinary);
 }
 
 .clients-link:hover,
@@ -559,6 +620,7 @@ p {
   letter-spacing: 0.03em;
 
   text-decoration: none;
+  transition: var(--animation-orinary) var(--cubic-ordinary);
 }
 
 .footer-contacts:hover,
@@ -609,84 +671,88 @@ p {
   background-color: var(--accent-color);
 }
 
-/* draft HW5 
+/* Модальне вікно */
 
-  .decoration {
-          display: block;  
-        }
-    
-  .decoration:hover,
-  .decoration:focus {
-          box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-            1px 4px 6px rgba(0, 0, 0, 0.16); 
-        }
-
-  .box{
-      position: relative;
-      overflow: hidden;
-    }
-
-  .overlay{
-      position: absolute;
-
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-
-      background: rgba(33, 150, 243, 0.9);
-      padding: 63px 24px;
-
-      transform: translateY(100%);
-      transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    
-  .box:hover .overlay,
-  .box:focus .overlay {
-    transform: translateY(0);
-     }
-
-  .overlay-text {
-      font-size: 18px;
-      line-height: 1.56;
-      letter-spacing: 0.03em;
-      color: #FFFFFF; } */
-
-.decoration {
-  position: relative;
-  overflow: hidden;
-  display: block;
-}
-
-.decoration:hover,
-.decoration:focus {
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
-}
-
-.overlay {
-  position: absolute;
-
+.backdrop {
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
 
-  background: rgba(33, 150, 243, 0.9);
-  padding: 63px 24px;
+  transition: opacity var(--animation-orinary),
+    visibility var(--animation-orinary);
 
-  transform: translateY(100%);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
-.decoration:hover .overlay,
-.bdecoration:focus .overlay {
-  transform: translateY(0);
+.backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 
-.overlay-text {
-  font-size: 18px;
-  line-height: 1.56;
-  letter-spacing: 0.03em;
-  color: #ffffff;
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+
+  width: 528px;
+  height: 581px;
+  background-color: var(--back-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+
+  transition: opacity var(--animation-orinary) ease-in var(--animation-orinary),
+    transform 400ms ease-in var(--animation-orinary);
+}
+
+.backdrop.is-hidden .modal {
+  opacity: 0;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.modal-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 30px;
+  height: 30px;
+  padding: 0;
+
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  background-color: transparent;
+}
+
+/* draft */
+
+.activity .item {
+  position: relative;
+  width: 370px;
+  height: 294px;
+}
+
+.activity .title {
+  display: block;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+
+  padding-top: 27px;
+  padding-bottom: 27px;
+  margin-bottom: 0;
+
+  color: var(--back-color);
+  background: rgba(47, 48, 58, 0.8);
+
+  text-align: center;
+  text-transform: uppercase;
 }
