@@ -13,7 +13,7 @@
   --icons-color: #afb1b8;
 
   /* Анімація */
-  --animation-orinary: 2500ms;
+  --animation-orinary: 250ms;
   --cubic-ordinary: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -144,7 +144,7 @@ p {
   letter-spacing: 0.02em;
   text-decoration: none;
 
-  transition: var(--animation-orinary) var(--cubic-ordinary);
+  transition: color var(--animation-orinary) var(--cubic-ordinary);
 }
 
 .site-nav .link:hover,
@@ -345,7 +345,7 @@ p {
 
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 
-  transition: var(--animation-orinary) var(--cubic-ordinary);
+  transition: background-color var(--animation-orinary) var(--cubic-ordinary);
 }
 
 .buttons .btn {
@@ -363,7 +363,7 @@ p {
   padding: 6px 22px;
   border-radius: 4px;
 
-  transition: var(--animation-orinary) var(--cubic-ordinary);
+  transition: color var(--animation-orinary) var(--cubic-ordinary);
 }
 
 .buttons .btn:hover,
@@ -425,6 +425,7 @@ p {
 
   margin-bottom: 30px;
   background-color: var(--button-color);
+  border-radius: 4px;
 }
 
 /* Діяльність */
@@ -531,7 +532,6 @@ p {
 
 .examples .item {
   flex-basis: calc((100% - 60px) / 3);
-  transition: var(--animation-orinary) var(--cubic-ordinary);
 }
 
 .wrapper {
@@ -550,6 +550,10 @@ p {
   overflow: hidden;
   display: block;
   outline: transparent;
+
+  transition-property: transform, box-shadow;
+  transition-timing-function: var(--cubic-ordinary);
+  transition-duration: var(--animation-orinary);
 }
 
 .decoration:hover,
@@ -570,7 +574,7 @@ p {
   padding: 63px 24px;
 
   transform: translateY(100%);
-  transition: var(--animation-orinary) var(--cubic-ordinary);
+  transition: transform var(--animation-orinary) var(--cubic-ordinary);
 }
 
 .decoration:hover .overlay,
@@ -605,7 +609,7 @@ p {
 
   outline: transparent;
 
-  transition: var(--animation-orinary) var(--cubic-ordinary);
+  transition: border-color var(--animation-orinary) var(--cubic-ordinary);
 }
 
 .clients-link:hover,
@@ -646,7 +650,7 @@ p {
   letter-spacing: 0.03em;
 
   text-decoration: none;
-  transition: var(--animation-orinary) var(--cubic-ordinary);
+  transition: color var(--animation-orinary) var(--cubic-ordinary);
 }
 
 .footer-contacts:hover,
