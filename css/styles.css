@@ -13,7 +13,7 @@
   --icons-color: #afb1b8;
 
   /* Анімація */
-  --animation-orinary: 250ms;
+  --animation-orinary: 2500ms;
   --cubic-ordinary: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -198,7 +198,7 @@ p {
   line-height: 1.14px;
   letter-spacing: 0.02em;
 
-  transition: var(--animation-orinary) var(--cubic-ordinary);
+  transition: color var(--animation-orinary) var(--cubic-ordinary);
 }
 
 .site-contacts .contact:hover,
@@ -438,6 +438,30 @@ p {
   margin-right: 30px;
 }
 
+.activity .item {
+  position: relative;
+  width: 370px;
+  height: 294px;
+}
+
+.activity .title {
+  display: block;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+
+  padding-top: 27px;
+  padding-bottom: 27px;
+  margin-bottom: 0;
+
+  color: var(--back-color);
+  background: rgba(47, 48, 58, 0.8);
+
+  font-size: 14px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
 /* Команда */
 
 .our-team {
@@ -473,6 +497,7 @@ p {
 
 .icon {
   fill: var(--icons-color);
+  transition: fill var(--animation-orinary) var(--cubic-ordinary);
 }
 
 .icon-link:hover,
@@ -493,7 +518,7 @@ p {
   align-items: center;
   justify-content: center;
 
-  transition: var(--animation-orinary) var(--cubic-ordinary);
+  transition: background-color var(--animation-orinary) var(--cubic-ordinary);
 }
 
 /* Приклади робіт  */
@@ -524,6 +549,7 @@ p {
   position: relative;
   overflow: hidden;
   display: block;
+  outline: transparent;
 }
 
 .decoration:hover,
@@ -733,26 +759,3 @@ p {
 }
 
 /* draft */
-
-.activity .item {
-  position: relative;
-  width: 370px;
-  height: 294px;
-}
-
-.activity .title {
-  display: block;
-  position: absolute;
-  width: 100%;
-  bottom: 0;
-
-  padding-top: 27px;
-  padding-bottom: 27px;
-  margin-bottom: 0;
-
-  color: var(--back-color);
-  background: rgba(47, 48, 58, 0.8);
-
-  text-align: center;
-  text-transform: uppercase;
-}
