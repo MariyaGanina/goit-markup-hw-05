@@ -363,7 +363,9 @@ p {
   padding: 6px 22px;
   border-radius: 4px;
 
-  transition: color var(--animation-orinary) var(--cubic-ordinary);
+  transition: color var(--animation-orinary) var(--cubic-ordinary),
+    background-color var(--animation-orinary) var(--cubic-ordinary),
+    box-shadow var(--animation-orinary) var(--cubic-ordinary);
 }
 
 .buttons .btn:hover,
@@ -578,7 +580,7 @@ p {
 }
 
 .decoration:hover .overlay,
-.bdecoration:focus .overlay {
+.decoration:focus .overlay {
   transform: translateY(0);
 }
 
